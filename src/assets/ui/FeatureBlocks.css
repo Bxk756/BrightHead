@@ -1,0 +1,21 @@
+/* BrightHead — FeatureBlocks.css */
+
+.feature-block {
+  @apply bg-gray-900 border border-gray-800 rounded-2xl p-8 shadow-xl shadow-black/30 transition-all;
+}
+
+.feature-block:hover {
+  @apply border-blue-600/30 shadow-blue-600/20 scale-[1.01];
+}
+
+.feature-icon {
+  @apply w-12 h-12 flex items-center justify-center rounded-xl bg-blue-600/20 text-blue-400 mb-4 text-2xl;
+}
+
+.feature-title {
+  @apply text-xl font-semibold text-white mb-2;
+}
+
+.feature-desc {
+  @apply text-gray-300 leading-relaxed;
+}
