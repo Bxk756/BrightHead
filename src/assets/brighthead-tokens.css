@@ -1,6 +1,77 @@
+/* =========================================================
+   BRIGHTHEAD — DESIGN TOKENS
+   Global CSS Variables for Colors, Typography & Shadows
+   ========================================================= */
+
 :root {
+  /* Brand Colors */
   --brand: #0ea5e9;
+  --brand-light: #38bdf8;
+  --brand-dark: #0284c7;
+
+  /* Accent Colors */
   --accent: #38bdf8;
-  --bg: #020617;
-  --fg: #0f172a;
+  --accent-light: #7dd3fc;
+  --accent-dark: #0ea5e9;
+
+  /* Backgrounds */
+  --bg: #020617;         /* Deep navy */
+  --bg-soft: #0a1222;
+  --bg-elevated: #0f172a;
+
+  /* Foregrounds */
+  --fg: #e2e8f0;         /* Soft white text */
+  --fg-muted: #94a3b8;
+  --fg-strong: #f8fafc;
+
+  /* Borders */
+  --border: #1e293b;
+  --border-light: #334155;
+
+  /* Semantic Colors */
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --error: #ef4444;
+  --info: #0ea5e9;
+
+  /* Radii */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 999px;
+
+  /* Shadows */
+  --shadow-soft: 0 4px 14px rgba(0, 0, 0, 0.25);
+  --shadow-glow: 0 0 32px rgba(14, 165, 233, 0.35);
+
+  /* Typography */
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-size-base: 16px;
+  --font-size-lg: 20px;
+  --font-size-xl: 28px;
+  --font-size-hero: 54px;
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-medium: 250ms ease;
+  --transition-slow: 400ms ease;
+}
+
+/* =========================================================
+   DARK MODE OVERRIDES (Auto-applied via class="dark")
+   ========================================================= */
+
+.dark {
+  --bg: #000814;
+  --bg-soft: #0a0f1e;
+  --bg-elevated: #0b1225;
+
+  --fg: #f1f5f9;
+  --fg-muted: #94a3b8;
+
+  --border: #1e293b;
+  --border-light: #334155;
+
+  --shadow-glow: 0 0 40px rgba(56, 189, 248, 0.25);
 }
