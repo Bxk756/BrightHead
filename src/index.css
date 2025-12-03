@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* BrightHead Design System */
+@import "./assets/brighthead-tokens.css";
+@import "./assets/brighthead.css";
+
+/* UI Components */
+@import "./assets/ui/Buttons.css";
+@import "./assets/ui/Cards.css";
+@import "./assets/ui/Inputs.css";
+@import "./assets/ui/Badges.css";
+@import "./assets/ui/Alerts.css";
+@import "./assets/ui/FeatureBlocks.css";
