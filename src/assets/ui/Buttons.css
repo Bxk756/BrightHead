@@ -1,0 +1,29 @@
+/* BrightHead — Buttons.css */
+
+.btn {
+  @apply px-5 py-3 rounded-xl font-medium transition-all duration-200 select-none;
+}
+
+.btn-primary {
+  @apply bg-blue-500 text-white shadow-lg hover:bg-blue-600 hover:shadow-blue-600/40 active:scale-95;
+}
+
+.btn-outline {
+  @apply border border-gray-600 text-gray-200 hover:bg-gray-800 hover:border-gray-500 active:scale-95;
+}
+
+.btn-ghost {
+  @apply text-gray-300 hover:text-white hover:bg-gray-800/40 active:scale-95;
+}
+
+.btn-danger {
+  @apply bg-red-500 text-white hover:bg-red-600 shadow-lg shadow-red-600/30 active:scale-95;
+}
+
+.btn-sm {
+  @apply px-3 py-1.5 text-sm;
+}
+
+.btn-lg {
+  @apply px-7 py-4 text-lg;
+}
