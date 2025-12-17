@@ -1,12 +1,11 @@
 {
   "name": "BrightHead",
   "short_name": "BrightHead",
-  "description": "Learn AI skills with structured roadmaps, guided kits, and hands-on projects.",
+  "description": "Learn AI skills fast with structured roadmaps and hands-on kits.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#020617",
-  "theme_color": "#0ea5e9",
-  "orientation": "portrait",
+  "theme_color": "#020617",
   "icons": [
     {
       "src": "/image/brighthead-logo.webp",
