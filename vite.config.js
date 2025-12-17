@@ -7,20 +7,14 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: "autoUpdate",
-      includeAssets: [
-        "image/brighthead-logo.webp",
-        "image/brighthead-logo-512.webp",
-        "image/brighthead-logo@2x.webp",
-        "image/AI Learning and Innovation Visualization.png"
-      ],
+      includeAssets: ["image/**/*"],
       manifest: {
         name: "BrightHead",
         short_name: "BrightHead",
-        description: "Learn AI skills with structured roadmaps and hands-on kits",
-        theme_color: "#020617",
-        background_color: "#020617",
-        display: "standalone",
         start_url: "/",
+        display: "standalone",
+        background_color: "#020617",
+        theme_color: "#0ea5e9",
         icons: [
           {
             src: "/image/brighthead-logo.webp",
@@ -35,8 +29,5 @@ export default defineConfig({
         ]
       }
     })
-  ],
-  build: {
-    outDir: "dist"
-  }
+  ]
 });

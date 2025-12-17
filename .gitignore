@@ -1,5 +1,17 @@
-node_modules
-dist
-.pnpm
+# Node
+node_modules/
+
+# Vite build output
+dist/
+
+# Env
 .env
-.env.*
+.env.local
+
+# Logs
+npm-debug.log*
+pnpm-debug.log*
+
+# OS
+.DS_Store
+
