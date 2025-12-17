@@ -4,40 +4,65 @@ import App from "./App.jsx";
 import "./index.css";
 import { registerSW } from "virtual:pwa-register";
 
+/**
+ * Register Service Worker (no blocking dialogs, Lighthouse-safe)
+ */
 const updateSW = registerSW({
   onNeedRefresh() {
-    if (confirm("A new version of BrightHead is available. Reload now?")) {
-      updateSW(true);
-    }
-  },
-  onOfflineReady() {
-    console.log("BrightHead is ready to work offline.");
+    const banner = document.createElement("div");
+    banner.setAttribute("role", "status");
+    banner.style.position = "fixed";
+    banner.style.bottom = "16px";
+    banner.style.left = "50%";
+    banner.style.transform = "translateX(-50%)";
+    banner.style.background = "#020617";
+    banner.style.color = "#ffffff";
+    banner.style.padding = "12px 16px";
+    banner.style.borderRadius = "8px";
+    banner.style.zIndex = "9999";
+    banner.style.fontSize = "14px";
+
+    const btn = document.createElement("button");
+    btn.textContent = "Update";
+    btn.style.marginLeft = "12px";
+    btn.style.background = "#2563eb";
+    btn.style.color = "#fff";
+    btn.style.border = "none";
+    btn.style.borderRadius = "6px";
+    btn.style.padding = "6px 10px";
+    btn.onclick = () => updateSW(true);
+
+    banner.textContent = "New version available.";
+    banner.appendChild(btn);
+    document.body.appendChild(banner);
   },
 });
 
 /**
- * PWA Install Prompt (Android + Desktop)
+ * Android / Desktop PWA Install Prompt
  */
-let deferredPrompt;
+let deferredPrompt = null;
 
 window.addEventListener("beforeinstallprompt", (e) => {
   e.preventDefault();
   deferredPrompt = e;
 
   const installBtn = document.createElement("button");
-  installBtn.innerText = "Install BrightHead App";
+  installBtn.textContent = "Install App";
+  installBtn.setAttribute("aria-label", "Install BrightHead app");
   installBtn.style.position = "fixed";
-  installBtn.style.bottom = "20px";
-  installBtn.style.right = "20px";
-  installBtn.style.padding = "12px 16px";
+  installBtn.style.bottom = "16px";
+  installBtn.style.right = "16px";
   installBtn.style.background = "#2563eb";
-  installBtn.style.color = "#fff";
+  installBtn.style.color = "#ffffff";
   installBtn.style.border = "none";
   installBtn.style.borderRadius = "8px";
+  installBtn.style.padding = "10px 14px";
   installBtn.style.zIndex = "9999";
 
   installBtn.onclick = async () => {
     installBtn.remove();
+    if (!deferredPrompt) return;
     deferredPrompt.prompt();
     await deferredPrompt.userChoice;
     deferredPrompt = null;
@@ -47,29 +72,35 @@ window.addEventListener("beforeinstallprompt", (e) => {
 });
 
 /**
- * iOS Install Hint
+ * iOS Install Hint (Lighthouse-safe)
  */
 const isIOS =
-  /iphone|ipad|ipod/i.test(window.navigator.userAgent) &&
+  /iphone|ipad|ipod/i.test(navigator.userAgent) &&
   !window.matchMedia("(display-mode: standalone)").matches;
 
 if (isIOS) {
-  const iosHint = document.createElement("div");
-  iosHint.innerHTML =
-    "Install BrightHead: Tap <strong>Share</strong> → <strong>Add to Home Screen</strong>";
-  iosHint.style.position = "fixed";
-  iosHint.style.bottom = "20px";
-  iosHint.style.left = "50%";
-  iosHint.style.transform = "translateX(-50%)";
-  iosHint.style.background = "#020617";
-  iosHint.style.color = "#fff";
-  iosHint.style.padding = "12px 16px";
-  iosHint.style.borderRadius = "8px";
-  iosHint.style.zIndex = "9999";
+  const iosBanner = document.createElement("div");
+  iosBanner.setAttribute("role", "status");
+  iosBanner.style.position = "fixed";
+  iosBanner.style.bottom = "16px";
+  iosBanner.style.left = "50%";
+  iosBanner.style.transform = "translateX(-50%)";
+  iosBanner.style.background = "#020617";
+  iosBanner.style.color = "#ffffff";
+  iosBanner.style.padding = "12px 16px";
+  iosBanner.style.borderRadius = "8px";
+  iosBanner.style.fontSize = "14px";
+  iosBanner.style.zIndex = "9999";
 
-  document.body.appendChild(iosHint);
+  iosBanner.innerHTML =
+    "Install BrightHead: Tap <strong>Share</strong> → <strong>Add to Home Screen</strong>";
+
+  document.body.appendChild(iosBanner);
 }
 
+/**
+ * React App Mount
+ */
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <App />
