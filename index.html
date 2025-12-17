@@ -2,91 +2,51 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
-    />
 
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Title -->
     <title>BrightHead — Learn AI Skills Fast</title>
+
+    <!-- SEO -->
+    <meta
+      name="description"
+      content="BrightHead helps you learn AI skills fast with structured roadmaps, guided learning kits, and hands-on projects."
+    />
+    <link rel="canonical" href="https://app.brighthead.cloud/" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="BrightHead — Learn AI Skills Fast" />
+    <meta
+      property="og:description"
+      content="Structured AI roadmaps, guided learning kits, and hands-on AI projects."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://app.brighthead.cloud/" />
+    <meta
+      property="og:image"
+      content="/image/brighthead-logo-512.webp"
+    />
 
     <!-- PWA -->
     <link rel="manifest" href="/manifest.webmanifest" />
     <meta name="theme-color" content="#020617" />
-
-    <!-- iOS PWA -->
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <meta name="apple-mobile-web-app-title" content="BrightHead" />
-    <link rel="apple-touch-icon" href="/image/brighthead-logo-512.webp" />
+    <link
+      rel="apple-touch-icon"
+      href="/image/brighthead-logo-512.webp"
+    />
 
-    <!-- Favicon -->
-    <link rel="icon" href="/image/brighthead-logo.webp" />
-
-    <style>
-      /* iOS install banner */
-      #ios-install {
-        position: fixed;
-        bottom: 16px;
-        left: 16px;
-        right: 16px;
-        background: #020617;
-        color: #fff;
-        padding: 14px 16px;
-        border-radius: 14px;
-        font-family: system-ui, -apple-system, BlinkMacSystemFont;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
-        display: none;
-        z-index: 9999;
-      }
-
-      #ios-install strong {
-        display: block;
-        margin-bottom: 6px;
-      }
-
-      #install-btn {
-        position: fixed;
-        right: 16px;
-        bottom: 90px;
-        background: #2563eb;
-        color: white;
-        border: none;
-        padding: 12px 16px;
-        border-radius: 999px;
-        font-weight: 600;
-        cursor: pointer;
-        display: none;
-        z-index: 9999;
-      }
-    </style>
   </head>
 
   <body>
     <div id="root"></div>
 
-    <!-- Android install button -->
-    <button id="install-btn">Install App</button>
-
-    <!-- iOS install hint -->
-    <div id="ios-install">
-      <strong>Install BrightHead</strong>
-      Tap <b>Share</b> → <b>Add to Home Screen</b>
-    </div>
-
+    <!-- Vite entry -->
     <script type="module" src="/src/main.jsx"></script>
-
-    <script>
-      // iOS detection
-      const isIOS =
-        /iphone|ipad|ipod/.test(window.navigator.userAgent.toLowerCase()) &&
-        !window.matchMedia("(display-mode: standalone)").matches;
-
-      if (isIOS) {
-        setTimeout(() => {
-          document.getElementById("ios-install").style.display = "block";
-        }, 1500);
-      }
-    </script>
   </body>
 </html>
 
