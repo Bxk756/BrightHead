@@ -1,4 +1,7 @@
-import heroImg from "../assets/brighthead-hero.png";
+<img
+  src="/assets/brighthead-hero.png"
+  alt="BrightHead Hero"
+/>
 
 export default function Hero() {
   return (
