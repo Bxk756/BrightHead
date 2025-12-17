@@ -4,33 +4,38 @@
     <meta charset="UTF-8" />
 
     <meta
-      name="description"
-      content="BrightHead helps you turn AI curiosity into real, job-ready skills with structured learning kits."
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
     />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#020617" />
+    <title>BrightHead — Learn AI Skills Fast</title>
+
+    <meta
+      name="description"
+      content="BrightHead helps you learn AI skills with structured roadmaps, guided kits, and hands-on projects."
+    />
+
+    <meta name="theme-color" content="#0ea5e9" />
 
     <!-- PWA -->
     <link rel="manifest" href="/manifest.webmanifest" />
-    <link rel="icon" href="/image/brighthead-logo.webp" />
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="BrightHead — Learn AI Skills Fast" />
-    <meta
-      property="og:description"
-      content="Structured AI learning kits and roadmaps."
+    <link
+      rel="apple-touch-icon"
+      href="/image/brighthead-logo-512.webp"
     />
-    <meta
-      property="og:image"
-      content="https://app.brighthead.cloud/image/brighthead-logo-512.webp"
-    />
-    <meta property="og:type" content="website" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-    <title>BrightHead — Learn AI Skills Fast</title>
+    <!-- Fonts (optional but safe) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
   </head>
+
   <body>
     <div id="root"></div>
+
+    <!-- Vite entry -->
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
